@@ -1,0 +1,32 @@
+<div class="user_info clearfix">
+	<h1>User info</h1>
+	<%= attachment_image_tag user, :profile_image, format: 'jpeg', size: '150x150' %>
+	<table>
+		<tbody>
+			<tr>
+				<td>name</td>
+				<td><%= user.name %></td>
+			</tr>
+			<tr>
+				<td>introduction</td>
+				<td><%= user.introduction %></td>
+			</tr>
+		</tbody>
+	</table>
+	<% if params[:id].to_i == current_user.id %>
+		<%= link_to "ユーザー編集画面へ", edit_user_path(current_user.id) %>
+	<% else %>
+		<%= link_to "きみはダメだよ。自分の画面へ行ってね。", user_path(current_user.id) %>
+	<% end %>
+</div>
+
+<div class="new_book clearfix">
+	<h1>New book</h1>
+	<%= form_for(book, url: books_path) do |f| %>
+		<p>Title</p>
+		<%= f.text_field :title %>
+		<p>Opinion</p>
+		<%= f.text_area :body, rows: "3" %><br>
+		<%= f.submit "Create Book" %>
+	<% end %>
+</div>

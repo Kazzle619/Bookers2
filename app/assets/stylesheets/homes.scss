@@ -1,3 +1,20 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.booker_icon_title {
+	padding-right: 20px;
+	background-image: url("/images/bookers_icon.png");
+	background-size: cover;
+}
+
+.booker_icon {
+	padding-right: 10px;
+	background-image: url("/images/bookers_icon.png");
+	background-size: contain;
+}
+
+.strong {
+	font-weight: bold;
+}

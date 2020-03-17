@@ -1,2 +1,8 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<h1>welcome to <span class="booker_icon_title">&nbsp;</span>Bookers !!</h1>
+<p>
+	In <span class="booker_icon">&nbsp;</span><span class="strong">Bookers,</span><br>
+	you can share and exchange your opinions, inpressions, and emotions<br>
+	about various books!
+</p>
+<%= button_to "Log in", new_user_session_path, mehtod: :get %><br>
+<%= button_to "Sign Up", new_user_registration_path, method: :get %><br>

@@ -1,2 +1,22 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="left_side">
+	<%= render 'users/template', {user: @user, book: @book} %>
+</div>
+<div class="right_side">
+	<h1>Users</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>image</th>
+				<th>name</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
