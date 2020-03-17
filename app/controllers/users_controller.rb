@@ -6,12 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user_id = params[:user_id].to_i
-    if user_id == current_user.id
-      @user = User.find(current_user.id)
-    else
-      @user = User.find(user_id)
-    end
+    @user = User.find(params[:id])
     @book = Book.new
     @books = Book.where(user_id: @user.id)
   end

@@ -24,6 +24,9 @@
 	clear: both;
 }
 
+.flash {
+	color: green;
+}
 
 a {
 	color: inherit;

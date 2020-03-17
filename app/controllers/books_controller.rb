@@ -38,9 +38,13 @@ class BooksController < ApplicationController
 			redirect_to book_path(@book.id)
 		else
 			render 'books/edit'
+		end
 	end
 
 	def destroy
+		@book = Book.find(params[:id])
+		@book.destroy
+		redirect_to books_path
 	end
 
 
@@ -49,5 +53,4 @@ class BooksController < ApplicationController
 	def book_params
 		params.require(:book).permit(:title, :body, :user_id)
 	end
-
 end
