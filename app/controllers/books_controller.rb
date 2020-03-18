@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+	before_action :authenticate_user!
+
 	def index
 		@user = User.find(current_user.id)
     @book = Book.new
@@ -19,8 +21,8 @@ class BooksController < ApplicationController
 			redirect_to book_path(@book.id)
 		else
 			@user = User.find(current_user.id)
-			@books = Book.all
-			render 'user/show'
+			@books = Book.where(user_id: @user.id)
+			render 'users/show'
 		end
 	end
 

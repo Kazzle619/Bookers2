@@ -13,16 +13,9 @@
  *= require_tree .
  *= require_self
  */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: content-box;
-}
-.clearfix {
-	content: "";
-	display: block;
-	clear: both;
-}
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
 
 .flash {
 	color: green;
@@ -40,14 +33,20 @@ header {
 	margin-bottom: 20px;
 }
 
-.nav-list {
+.logo {
+	font-size: 20px;
+}
+
+.nav {
 	float: right;
 	text-align: center;
 }
 
-.nav-list-item {
+h3 {
+	color: red;
+}
 
-	list-style: none;
-	display: inline-block;
-	margin: 0 10px;
+.error_messages {
+	color: red;
+	list-style-type: disc;
 }

@@ -1,8 +1,19 @@
-<h1>welcome to <span class="booker_icon_title">&nbsp;</span>Bookers !!</h1>
-<p>
-	In <span class="booker_icon">&nbsp;</span><span class="strong">Bookers,</span><br>
-	you can share and exchange your opinions, inpressions, and emotions<br>
-	about various books!
-</p>
-<%= button_to "Log in", new_user_session_path, mehtod: :get %><br>
-<%= button_to "Sign Up", new_user_registration_path, method: :get %><br>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h1>
+			<p>
+				In <span class="glyphicon glyphicon-book" aria-hidden="true"><span class="strong">Bookers,</span><br>
+				you can share and exchange your opinions, inpressions, and emotions<br>
+				about various books!
+			</p>
+			<%= link_to new_user_session_path do %>
+				<button type="button" class="btn btn-info btn-block" aria-label="Left Align">Log in</button>
+			<% end %>
+			<%= link_to new_user_registration_path do %>
+				<button type="button" class="btn btn-success btn-block" aria-label="Left Align">Sign Up</button>
+			<% end %>
+		</div>
+	</div>
+</div>
+

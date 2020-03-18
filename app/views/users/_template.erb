@@ -1,32 +1,37 @@
-<div class="user_info clearfix">
-	<h1>User info</h1>
-	<%= attachment_image_tag user, :profile_image, format: 'jpeg', size: '150x150' %>
-	<table>
-		<tbody>
-			<tr>
-				<td>name</td>
-				<td><%= user.name %></td>
-			</tr>
-			<tr>
-				<td>introduction</td>
-				<td><%= user.introduction %></td>
-			</tr>
-		</tbody>
-	</table>
-	<% if user.id == current_user.id %>
-		<%= link_to "ユーザー編集画面へ", edit_user_path(current_user.id) %>
-	<% else %>
-		<%= link_to "きみはダメだよ。自分の画面へ行ってね。", user_path(current_user.id) %>
-	<% end %>
-</div>
-
-<div class="new_book clearfix">
-	<h1>New book</h1>
-	<%= form_for(book, url: books_path) do |f| %>
-		<p>Title</p>
-		<%= f.text_field :title %>
-		<p>Opinion</p>
-		<%= f.text_area :body, rows: "3" %><br>
-		<%= f.submit "Create Book" %>
-	<% end %>
+<div class="row">
+	<div class="user_info">
+		<h2>User info</h2>
+		<%= attachment_image_tag user, :profile_image, format: 'jpeg', size: '100x100' %>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td>name</td>
+					<td><%= user.name %></td>
+				</tr>
+				<tr>
+					<td>introduction</td>
+					<td><%= user.introduction %></td>
+				</tr>
+			</tbody>
+		</table>
+		<% if user.id == current_user.id %>
+			<%= link_to edit_user_path(current_user.id) do %>
+				<button type="button" class="btn btn-default btn-block" aria-label="Left Align"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button>
+			<% end %>
+		<% else %>
+			<%= link_to user_path(current_user.id) do %>
+				<button type="button" class="btn btn-default btn-block" aria-label="Left Align"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="new_book">
+		<h2>New book</h2>
+		<%= form_for(book, url: books_path) do |f| %>
+			<label>Title</label><br>
+			<%= f.text_field :title, style: "min-width: 100%;" %>
+			<label>Opinion</label>
+			<%= f.text_area :body, rows: "3", style: "min-width: 100%;" %><br>
+			<%= f.submit "Create Book", class: "btn btn-block btn-primary" %>
+		<% end %>
+	</div>
 </div>
